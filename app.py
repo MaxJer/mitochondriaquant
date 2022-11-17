@@ -60,13 +60,17 @@ st.header("Mitochondria-Quant")
 st.subheader("Instructions")
 
 ## add a text
-st.text("""Use this app to automatically analyse size and circularity of mitochondria.
- Simply upload your microscopic image, select a region of interest (ROI), and tune parameters
-  for optimal image contours.
+st.text("""Use this app to automatically analyse size and circularity of mitochondria. Simply upload your microscopic image, select a region of interest (ROI), and tune parameters for optimal image contours.
 """)
 
 ## ACCEPTED FILE TYPES: .png, .jpg, .jpeg,
 ALLOWED_EXTENSIONS = ["png", "jpg", "jpeg"]
+
+## add a subheader
+st.subheader("Parameters")
+
+## add a text
+st.text("\033[1m" + "ROI" + "\033[0m")
 
 ## add a button to upload an image either png or jpg
 uploaded_file = st.file_uploader("Upload your image", type=ALLOWED_EXTENSIONS)
