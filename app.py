@@ -41,7 +41,7 @@ st.sidebar.title("Parameters")
 st.sidebar.text("Adjust the parameters as needed!")
 
 ## add a header
-st.header("My Mitochondrial App")
+st.header("Mitochondria Quant")
 
 ## add a subheader
 st.subheader("Instructions")
@@ -51,7 +51,6 @@ st.markdown(
     """
 - Upload the image that you want to analyze
 - Adjust the parameters as needed
-- Click on the button to start the analysis
 - Download the results
 """
 )
@@ -77,6 +76,12 @@ st.markdown("---")
 st.sidebar.subheader("Parameters")
 
 ## the following parameters are needed
+## button to reset the parameters
+# if st.sidebar.button("Reset Parameters"):
+#     ## clear cache 
+#     st.cache(clear_cache=True)
+
+
 
 ## checkbox to save the plots or not 
 # SAVE_PLOTS_FLAG = st.sidebar.checkbox("Save Plots to ZIP File?", value=True)
@@ -105,7 +110,7 @@ MAD_MULTIPLIER: float = multipliers3.number_input(
 ## REGION OF INTERESTS 
 
 ## make 2 columns
-st.write("Select the region of interest")
+st.sidebar.write("Select the region of interest")
 roi_col_x_start, roi_col_x_end = st.sidebar.columns(2)
 ## roi_x start
 ROI_X_START: int = roi_col_x_start.number_input("Start - ROI X", min_value=0, max_value=1000, value=200, step=1)
@@ -258,16 +263,16 @@ def remove_outliers_mad(
     
 
 ## function to save the plot as io.BytesIO() object
-# def save_plot(fig: plt.Figure) -> io.BytesIO:
-#     """
-#     Saves the plot as io.BytesIO() object
-#     :param fig: the figure to save
-#     :return: io.BytesIO() object
-#     """
-#     buf = io.BytesIO()
-#     fig.savefig(buf, format="png")
-#     buf.seek(0)
-#     return buf
+def save_plot(fig: plt.Figure) -> io.BytesIO:
+    """
+    Saves the plot as io.BytesIO() object
+    :param fig: the figure to save
+    :return: io.BytesIO() object
+    """
+    buf = io.BytesIO()
+    fig.savefig(buf, format="png")
+    buf.seek(0)
+    return buf
 # fn = 'scatter.png'
 # img = io.BytesIO()
 # plt.savefig(img, format='png')
@@ -305,9 +310,9 @@ def remove_outliers(
 ####
 #################################################################
 
-# in_memory_image = read_image(uploaded_file.read()) if uploaded_file else None
-TEST_IMAGE = "/Users/eric/Documents/Locaria/Projects/repos/mitochondria_detection/images/original_img.png"
-in_memory_image = cv2.imread(TEST_IMAGE)
+in_memory_image = read_image(uploaded_file.read()) if uploaded_file else None
+# TEST_IMAGE = "/Users/eric/Documents/Locaria/Projects/repos/mitochondria_detection/images/original_img.png"
+# in_memory_image = cv2.imread(TEST_IMAGE)
 
 ## create a button
 if isinstance(in_memory_image, np.ndarray):
