@@ -4,6 +4,25 @@
 ## CODE TO EXECUTE IT 
 ## streamlit run app.py
 
+"""
+
+EXECUTE THE CODE LOCALLY: 
+
+streamlit run app.py 
+
+
+Pushing code to github 
+
+in the folder you want to commit 
+
+git add . 
+
+git commit -m "some updated message here"
+
+git push -u origin master 
+
+"""
+
 #################################################################
 #### IMPORTS 
 #################################################################
@@ -29,13 +48,13 @@ st.set_page_config(layout="wide", page_title="My App", page_icon="🧬")
 
 
 ## put a title to the side bar 
-st.sidebar.title("My App")
+st.sidebar.title("My App ")
 
 ## put a text to the side bar
 st.sidebar.text("This is my app")
 
 ## add a header 
-st.header("My Mitochondrial App")
+st.header("Mitochondria-Quant")
 
 ## add a subheader
 st.subheader("Instructions")
