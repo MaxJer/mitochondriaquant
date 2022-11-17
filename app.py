@@ -60,7 +60,10 @@ st.header("Mitochondria-Quant")
 st.subheader("Instructions")
 
 ## add a text
-st.text("This is my app....")
+st.text("""Use this app to automatically analyse size and circularity of mitochondria.
+ Simply upload your microscopic image, select a region of interest (ROI), and tune parameters
+  for optimal image contours.
+""")
 
 ## ACCEPTED FILE TYPES: .png, .jpg, .jpeg,
 ALLOWED_EXTENSIONS = ["png", "jpg", "jpeg"]
@@ -228,7 +231,7 @@ if isinstance(in_memory_image, np.ndarray):
     with col1:
         st.image(results_dict["roi"], caption="ROI", use_column_width=True)
     with col2:
-        st.image(results_dict["brighter_img"], caption="Brighter Image", use_column_width=True)
+        st.image(results_dict["brighter_img"], caption="Contours Image", use_column_width=True)
     with col3:
         st.image(results_dict["blur_img"], caption="Blur Image", use_column_width=True)
     
