@@ -70,7 +70,7 @@ ALLOWED_EXTENSIONS = ["png", "jpg", "jpeg"]
 st.subheader("Parameters")
 
 ## add a text
-st.text("\033[1m" + "ROI" + "\033[0m")
+st.text("**_ROI**")
 
 ## add a button to upload an image either png or jpg
 uploaded_file = st.file_uploader("Upload your image", type=ALLOWED_EXTENSIONS)
