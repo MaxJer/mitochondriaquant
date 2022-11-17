@@ -129,18 +129,18 @@ ROI_Y_END: int = roi_col_y_end.number_input("End - ROI Y", min_value=0, max_valu
 
 ## BRITHNESS MULTIPLIERS - a slider
 BRIGHTNESS_MULTIPLIER: float = st.sidebar.slider(
-    "Brightness Multiplier", min_value=0.0, max_value=100.0, value=2.0, step=0.1
+    "Brightness Multiplier", min_value=0.0, max_value=10.0, value=2.0, step=0.1
 )
 
 ## BLUR KERNEL - a tuple of (n,n) - a slider
 BLUR_KERNEL: float = st.sidebar.slider(
-    "Blur Kernel", min_value=0, max_value=100, value=3, step=1
+    "Blur Kernel", min_value=0, max_value=20, value=3, step=1
 )
 BLUR_KERNEL:float = (BLUR_KERNEL, BLUR_KERNEL)
 
 ## BLUR SIGMA
 BLUR_SIGMA:float = st.sidebar.slider(
-    "Blur Sigma", min_value=0, max_value=100, value=1, step=1
+    "Blur Sigma", min_value=0, max_value=10, value=1, step=1
 )
 
 ## THRESHOLD - a slider
@@ -163,22 +163,22 @@ THRESHOLD_STAGE_2: int = st.sidebar.slider(
 
 ## DILATION KERNEL - a slider, 2x2
 DILATION_KERNEL: int = st.sidebar.slider(
-    "Dilation Kernel", min_value=0, max_value=100, value=2, step=1
+    "Dilation Kernel", min_value=0, max_value=20, value=2, step=1
 )
 
 ## EROSION KERNEL - a slider, 1x1
 EROSION_KERNEL: int = st.sidebar.slider(
-    "Erosion Kernel", min_value=0, max_value=100, value=1, step=1
+    "Erosion Kernel", min_value=0, max_value=20, value=1, step=1
 )
 
 ## DILATION ITERATIONS - a slider, 1
 DILATION_ITERATIONS: int = st.sidebar.slider(
-    "Dilation Iterations", min_value=0, max_value=100, value=1, step=1
+    "Dilation Iterations", min_value=0, max_value=20, value=1, step=1
 )
 
 ## EROSION ITERATIONS - a slider, 2
 EROSION_ITERATIONS: int = st.sidebar.slider(
-    "Erosion Iterations", min_value=0, max_value=100, value=2, step=1
+    "Erosion Iterations", min_value=0, max_value=20, value=2, step=1
 )
 
 
